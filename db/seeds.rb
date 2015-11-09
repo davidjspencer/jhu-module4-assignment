@@ -5,7 +5,6 @@ dates = [today, two_days_ago, three_days_ago]
 
 User.destroy_all
 TodoList.destroy_all
-Profile.destroy_all
 
 100.times { |index| TodoList.create! list_name: "List #{index}", list_due_date: dates.sample }
 

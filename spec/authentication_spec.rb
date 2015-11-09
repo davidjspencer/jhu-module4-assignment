@@ -32,8 +32,6 @@ feature "Module 4 Authentication Test" do
         scenario "When not logged in only accessible page is login page" do
             visit(root_path)
             expect(URI.parse(page.current_url).path).to eq(login_path)
-            visit(todo_list_todo_items_path(tl_id))
-            expect(URI.parse(page.current_url).path).to eq(login_path)
             visit(new_todo_list_todo_item_path(tl_id))
             expect(URI.parse(page.current_url).path).to eq(login_path)            
             visit(edit_todo_list_todo_item_path(tl_id, item_id))
