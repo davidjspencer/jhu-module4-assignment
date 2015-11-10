@@ -9,8 +9,18 @@
   <strong>List due date:</strong>
   <%= @todo_list.list_due_date %>
 </p>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Due date</th>
+      <th>Description</th>
+      <th>Completed</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-<tbody>
+  <tbody>
     <% @todo_list.todo_items.each do |todo_item| %>
       <tr>
         <td><%= todo_item.title %></td>
@@ -18,7 +28,7 @@
         <td><%= todo_item.description %></td>
         <td><%= todo_item.completed %></td>
         <td><%= link_to 'Show', [@todo_list, todo_item] %></td>
-        
+
         <td><%= link_to 'Destroy', [@todo_list, todo_item], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
